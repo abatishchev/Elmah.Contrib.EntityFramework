@@ -9,6 +9,7 @@ Avaliable on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramewor
 
 Example
 ===
+```
 <configuration>
 	<connectionStrings>
 		<add name="ModelContainer" connectionString="metadata=res://*/;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True;&quot;" providerName="System.Data.EntityClient" />
@@ -17,6 +18,7 @@ Example
 		<errorLog type="Elmah.Contrib.EntityFramework.EntityErrorLog, Elmah.Contrib.EntityFramework" connectionStringName="ModelContainer" />
 	</elmah>
 </configuration>
+```
 
 Legal
 ===
