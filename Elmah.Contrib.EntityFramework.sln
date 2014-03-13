@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmah.Contrib.EntityFramework.Test", "Elmah.Contrib.EntityFramework.Test\Elmah.Contrib.EntityFramework.Test.fsproj", "{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
