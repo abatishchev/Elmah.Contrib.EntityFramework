@@ -72,6 +72,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Compile Include="EntityErrorLog.fs" />
+    <Compile Include="Properties\AssemblyInfo.fs" />
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
 </Project>
