@@ -1,26 +1,16 @@
 ﻿namespace Elmah.Contrib.EntityFramework
 
-open System.Configuration
 open System.Data.Entity.Core.EntityClient
 
 open Elmah
 
-type public EntityErrorLog = 
-    inherit SqlErrorLog
-
-    val private _connectionStringName : string
-
-    new (config : System.Collections.IDictionary) = {
-            inherit SqlErrorLog(config)
-
-            // config is a non-generic dictionary thus casting to string is required
-            _connectionStringName = config.Item("connectionStringName") :?> string
-        }
+[<Sealed>]
+type public EntityErrorLog(config : System.Collections.IDictionary) = 
+    inherit SqlErrorLog(config)
 
     override this.ConnectionString
-        with get() = this.GetProviderPart(this._connectionStringName)
+        with get() = this.GetProviderPart(base.ConnectionString)
 
-    member private this.GetProviderPart(connectionStringName : string) =
-        let entityConnectionString = ConfigurationManager.ConnectionStrings.Item(connectionStringName).ConnectionString;
-        let builder = new EntityConnectionStringBuilder(entityConnectionString)
+    member private this.GetProviderPart(connectionString : string) =
+        let builder = new EntityConnectionStringBuilder(connectionString)
         builder.ProviderConnectionString
