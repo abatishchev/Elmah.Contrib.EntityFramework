@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>Elmah.Contrib.EntityFramework</id>
+		<summary>Elmah.ErrorLog implementation for Entity Framework</summary>
+		<description>Provides Elmah.ErrorLog implementation for Microsoft Entity Framework written in F#</description>
+		<version>$Version$</version>
+		<authors>Alexander Batishchev</authors>
+		<copyright>Copyright © Alexander Batishchev 2014</copyright>
+		<projectUrl>https://github.com/abatishchev/Elmah.Contrib.EntityFramework</projectUrl>
+		<licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<tags>Elmah EntityFramework</tags>
+		<language>en-US</language>
+		<dependencies >
+			<dependency id="elmah" version="" />
+			<dependency id="elmah.sqlserver" version="" />
+			<dependency id="EntityFramework" version="" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\Elmah.Contrib.EntityFramework\bin\$Configuration$\Elmah.Contrib.EntityFramework.*" target="lib\net45" />
+	</files>
+</package>

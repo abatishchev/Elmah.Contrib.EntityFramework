@@ -16,12 +16,13 @@ open System.Runtime.InteropServices
 #if DEBUG
 [<assembly: AssemblyConfiguration("Debug")>]
 #else
-[<ssembly: AssemblyConfiguration("Release")>]
+[<assembly: AssemblyConfiguration("Release")>]
 #endif
 
-[<assembly: Guid("E230D669-A728-4792-9BF4-917AAE70E103")>]
+[<assembly: Guid("e230d669-a728-4792-9bf4-917aae70e103")>]
 
 [<assembly: AssemblyVersion("1.0.0.0")>]
 [<assembly: AssemblyFileVersion("1.0.0.0")>]
+[<assembly: AssemblyInformationalVersion("1.0.1.0")>]
 
 do()

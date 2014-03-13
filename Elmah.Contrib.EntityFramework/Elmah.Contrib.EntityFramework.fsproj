@@ -75,4 +75,11 @@
     <Compile Include="Properties\AssemblyInfo.fs" />
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
+  <PropertyGroup>
+    <NuGetExePath>..\.nuget\nuget.exe</NuGetExePath>
+    <NuSpecPath>..\.build\$(Name).nuspec</NuSpecPath>
+  </PropertyGroup>
+  <Target Name = "Pack" Condition="'$(Configuration)' == 'Release' " DependsOnTargets="Build">
+    <Exec Command="$(NuGetExePath) pack $(NuSpecPath) -Properties Version=$(Version) -Properties Configuration=$(Configuration)" />
+  </Target>
 </Project>
