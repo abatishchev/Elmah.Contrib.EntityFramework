@@ -3,6 +3,12 @@ Elmah.Contrib.EntityFramework
 
 Provides Elmah.ErrorLog implementation for Microsoft Entity Framework written in F#
 
+Description
+===
+
+You may want not to keep in Web.config both connection strings for Entity Framework (used by your project) and for SQL Server (used by Elmah) duplicating each other.
+So the goal of this small library is to extract the underlying SQL Server connection string for the EF connection string only specified in Web.config.
+
 Downloads
 ===
 Avaliable on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramework)
