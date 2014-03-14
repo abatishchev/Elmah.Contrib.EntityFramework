@@ -70,17 +70,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
     <Compile Include="EntityErrorLog.fs" />
     <Compile Include="Properties\AssemblyInfo.fs" />
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
-  <PropertyGroup>
-    <NugetExePath>..\.nuget\nuget.exe</NugetExePath>
-    <NugetOutputPath>..</NugetOutputPath>
-    <NuspecPath>..\.build\$(Name).nuspec</NuspecPath>
-  </PropertyGroup>
-  <Target Name = "Pack" Condition="'$(Configuration)' == 'Release' " DependsOnTargets="Build">
-    <Exec Command="$(NugetExePath) pack $(NuspecPath) -Properties Version=$(Version) -Properties Configuration=$(Configuration) -Output $(NugetOutputPath)" />
-  </Target>
 </Project>
