@@ -19,6 +19,6 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="..\Elmah.Contrib.EntityFramework\bin\$Configuration$\Elmah.Contrib.EntityFramework.*" target="lib\net45" />
+		<file src="Elmah.Contrib.EntityFramework\bin\$Configuration$\Elmah.Contrib.EntityFramework.*" target="lib\net45" />
 	</files>
 </package>
