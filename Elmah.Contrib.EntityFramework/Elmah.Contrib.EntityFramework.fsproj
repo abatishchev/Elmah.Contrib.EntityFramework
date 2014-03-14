@@ -76,10 +76,11 @@
   </ItemGroup>
   <Import Project="$(FSharpTargetsPath)" />
   <PropertyGroup>
-    <NuGetExePath>..\.nuget\nuget.exe</NuGetExePath>
-    <NuSpecPath>..\.build\$(Name).nuspec</NuSpecPath>
+    <NugetExePath>..\.nuget\nuget.exe</NugetExePath>
+    <NugetOutputPath>..</NugetOutputPath>
+    <NuspecPath>..\.build\$(Name).nuspec</NuspecPath>
   </PropertyGroup>
   <Target Name = "Pack" Condition="'$(Configuration)' == 'Release' " DependsOnTargets="Build">
-    <Exec Command="$(NuGetExePath) pack $(NuSpecPath) -Properties Version=$(Version) -Properties Configuration=$(Configuration)" />
+    <Exec Command="$(NugetExePath) pack $(NuspecPath) -Properties Version=$(Version) -Properties Configuration=$(Configuration) -Output $(NugetOutputPath)" />
   </Target>
 </Project>

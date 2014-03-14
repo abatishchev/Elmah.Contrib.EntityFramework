@@ -10,11 +10,11 @@
 		<projectUrl>https://github.com/abatishchev/Elmah.Contrib.EntityFramework</projectUrl>
 		<licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<tags>Elmah EntityFramework</tags>
+		<tags>Elmah EntityFramework FSharp</tags>
 		<language>en-US</language>
 		<dependencies >
-			<dependency id="elmah" version="" />
-			<dependency id="elmah.sqlserver" version="" />
+			<dependency id="Elmah" version="" />
+			<dependency id="Elmah.SqlServer" version="" />
 			<dependency id="EntityFramework" version="" />
 		</dependencies>
 	</metadata>
