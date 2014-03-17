@@ -9,8 +9,8 @@ type public EntityErrorLog(config : System.Collections.IDictionary) =
     inherit SqlErrorLog(config)
 
     override this.ConnectionString
-        with get() = this.GetProviderPart(base.ConnectionString)
-
-    member private this.GetProviderPart(connectionString : string) =
-        let builder = new EntityConnectionStringBuilder(connectionString)
-        builder.ProviderConnectionString
+        with get() =
+            let extract = fun s ->
+                let builder = new EntityConnectionStringBuilder(s)
+                builder.ProviderConnectionString
+            extract base.ConnectionString
