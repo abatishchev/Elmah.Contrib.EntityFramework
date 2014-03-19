@@ -60,8 +60,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+    <Compile Include="ElmahContextTest.fs" />
     <Compile Include="EntityErrorLogTest.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Elmah.Contrib.EntityFramework\Elmah.Contrib.EntityFramework.fsproj">
