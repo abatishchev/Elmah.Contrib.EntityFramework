@@ -6,6 +6,6 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
 type ElmahContextTest() =
-    [<TestMethod>]
+    //[<TestMethod>]
      member this.TestMethod1() =
         ()

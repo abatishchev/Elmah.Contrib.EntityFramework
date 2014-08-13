@@ -5,9 +5,45 @@ open System.ComponentModel.DataAnnotations
 open System.ComponentModel.DataAnnotations.Schema
 open System.Data.Entity
 
+open Elmah
+
 [<Table("ELMAH_Error")>] 
 type public ElmahError() = class
-    
+
+    new (ex : Exception ) = ElmahError(new Error(ex))
+
+    new (error : Error) as this = ElmahError() then
+        this.ErrorId <- Guid.NewGuid();
+
+        this.Application <- match error.ApplicationName with
+            | null -> ""
+            | _ -> error.ApplicationName
+
+        this.Host <- match error.HostName with
+            | null -> ""
+            | _ -> error.HostName
+        
+        this.Type <- match error.Type with
+            | null -> ""
+            | _ -> error.Type
+        
+        this.Source <- match error.Source with
+            | null -> ""
+            | _ -> error.Source
+        
+        this.Message <- match error.Message with
+            | null -> ""
+            | _ -> error.Message
+        
+        this.User <- match error.User with
+            | null -> ""
+            | _ -> error.User
+        
+        this.TimeUtc <- error.Time;
+        
+        let xml = ErrorXml.EncodeString(error);
+        this.AllXml <- xml;
+
     [<Key>]
     member val ErrorId = Guid.Empty with get, set
 

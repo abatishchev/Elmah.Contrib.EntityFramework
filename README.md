@@ -1,19 +1,40 @@
-Elmah.Contrib.EntityFramework
+﻿Elmah.Contrib.EntityFramework
 ===
 
-Provides Elmah.ErrorLog implementation for Microsoft Entity Framework written in F#
+Provides the way to integrate [Elmah](http://code.google.com/p/elmah/) with [Microsoft ADO.NET Entity Framework](http://entityframework.codeplex.com/). Written in F#.
 
 Description
 ===
 
-You may want not to keep in Web.config both connection strings for Entity Framework (used by your project) and for SQL Server (used by Elmah) duplicating each other.
-So the goal of this small library is to extract the underlying SQL Server connection string for the EF connection string only specified in Web.config.
+You may want not to keep in Web.config both connection strings for Entity Framework (used by your project) and for SQL Server (used by Elmah.SqlServer) duplicating each other.
+The goal of this library is to extract the underlying provider connection string from the EF connection string so only one will be kept in Web.config.
+
+Also you can query Elmah errors table using LINQ to Entities having strongly-typed POCO entities.
+
+Comments and contributions are very welcomed!
+
+Remarks
+===
+
+You can use either `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both simultaneously.
 
 Downloads
 ===
-Avaliable on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramework)
+Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramework)
 
-Example
+Release notes
+===
+
+1.0.3:
+[+] Adding to ElmahError constructors accepting Elmah.Error or System.Exception
+
+1.0.2:
+[+] Added EF Code First DB context to query database using LINQ to Entities
+
+1.0.1:
+[+] Added EntityErrorLog to re-use EF connection string
+
+Examples
 ===
 ```
 <configuration>
@@ -31,4 +52,5 @@ Legal
 
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
-Copyright � [Alexander Batishchev](http://abatishchev.ru) 2014 
+Copyright © [Alexander Batishchev](http://abatishchev.ru) 2014
+
