@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>Elmah.Contrib.EntityFramework</id>
-		<summary>Elmah.ErrorLog implementation for Entity Framework</summary>
-		<description>Provides Elmah.ErrorLog implementation for Microsoft Entity Framework written in F#</description>
+		<summary>Integration of Elmah with Entity Framework</summary>
+		<description>Provides the way to integrate Elmah with Microsoft ADO.NET Entity Framework. Written in F#.</description>
 		<version>$Version$</version>
 		<authors>Alexander Batishchev</authors>
 		<copyright>Copyright © Alexander Batishchev 2014</copyright>
@@ -14,7 +14,6 @@
 		<language>en-US</language>
 		<dependencies >
 			<dependency id="Elmah" version="" />
-			<dependency id="Elmah.SqlServer" version="" />
 			<dependency id="EntityFramework" version="" />
 		</dependencies>
 	</metadata>
