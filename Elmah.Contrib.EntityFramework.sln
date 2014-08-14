@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmah.Contrib.EntityFramework", "Elmah.Contrib.EntityFramework\Elmah.Contrib.EntityFramework.fsproj", "{19FA45DC-CCED-49EE-BF52-1626544C5DB0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8043267B-8E8A-422B-9492-48258F9D4F60}"
 	ProjectSection(SolutionItems) = preProject
 		Elmah.Contrib.EntityFramework.nuspec = Elmah.Contrib.EntityFramework.nuspec
@@ -14,20 +12,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Elmah.Contrib.EntityFramework.Test", "Elmah.Contrib.EntityFramework.Test\Elmah.Contrib.EntityFramework.Test.fsproj", "{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Contrib.EntityFramework", "Elmah.Contrib.EntityFramework\Elmah.Contrib.EntityFramework.csproj", "{3C5DFCD5-A2A1-4CD3-9CAE-6C36D7ED4942}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19FA45DC-CCED-49EE-BF52-1626544C5DB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0BFC5AD-B651-4936-99ED-B094ACD16DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C5DFCD5-A2A1-4CD3-9CAE-6C36D7ED4942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C5DFCD5-A2A1-4CD3-9CAE-6C36D7ED4942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C5DFCD5-A2A1-4CD3-9CAE-6C36D7ED4942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C5DFCD5-A2A1-4CD3-9CAE-6C36D7ED4942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
