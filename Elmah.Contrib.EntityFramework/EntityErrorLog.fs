@@ -10,7 +10,5 @@ type public EntityErrorLog(config : System.Collections.IDictionary) =
 
     override this.ConnectionString
         with get() =
-            let extract = fun s ->
-                let builder = new EntityConnectionStringBuilder(s)
-                builder.ProviderConnectionString
-            extract base.ConnectionString
+            let builder = new EntityConnectionStringBuilder(base.ConnectionString)
+            builder.ProviderConnectionString

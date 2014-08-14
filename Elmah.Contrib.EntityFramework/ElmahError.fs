@@ -8,79 +8,92 @@ open System.Data.Entity
 open Elmah
 
 [<Table("ELMAH_Error")>] 
-type public ElmahError() = class
+type public ElmahError() =
+
+    let mutable _errorId = Guid.Empty
+    let mutable _application = ""
+    let mutable _host = ""
+    let mutable _type= ""
+    let mutable _source= ""
+    let mutable _message= ""
+    let mutable _user= ""
+    let mutable _statusCode = 0
+    let mutable _timeUtc = DateTime.UtcNow
+    let mutable _sequence = 0
+    let mutable _allXml = ""
 
     new (ex : Exception ) = ElmahError(new Error(ex))
 
     new (error : Error) as this = ElmahError() then
         this.ErrorId <- Guid.NewGuid();
-
-        this.Application <- match error.ApplicationName with
-            | null -> ""
-            | _ -> error.ApplicationName
-
-        this.Host <- match error.HostName with
-            | null -> ""
-            | _ -> error.HostName
+        this.Application <- error.ApplicationName
+        this.Host <- error.HostName
+        this.Type <- error.Type
+        this.Source <- error.Source
+        this.Message <- error.Message
+        this.User <- error.User
+        this.TimeUtc <- error.Time
         
-        this.Type <- match error.Type with
-            | null -> ""
-            | _ -> error.Type
-        
-        this.Source <- match error.Source with
-            | null -> ""
-            | _ -> error.Source
-        
-        this.Message <- match error.Message with
-            | null -> ""
-            | _ -> error.Message
-        
-        this.User <- match error.User with
-            | null -> ""
-            | _ -> error.User
-        
-        this.TimeUtc <- error.Time;
-        
-        let xml = ErrorXml.EncodeString(error);
-        this.AllXml <- xml;
+        this.AllXml <- ErrorXml.EncodeString(error)
 
     [<Key>]
-    member val ErrorId = Guid.Empty with get, set
+    member this.ErrorId
+        with get() = _errorId
+        and set(value) = _errorId <- value
 
     [<Required>]
     [<StringLength(60)>]
-    member val Application = "" with get, set
+    member this.Application
+        with get() = _application
+        and set(value) = _application <- value
 
     [<Required>]
     [<StringLength(50)>]
-    member val Host = "" with get, set
+    member this.Host
+        with get() = _host
+        and set(value) = _host <- value
 
     [<Required>]
     [<StringLength(100)>]
-    member val Type = "" with get, set
+    member this.Type
+        with get() = _type
+        and set(value) = _type <- value
 
     [<Required>]
     [<StringLength(60)>]
-    member val Source = "" with get, set
+    member this.Source
+        with get() = _source
+        and set(value) = _source <- value
 
     [<Required>]
     [<StringLength(500)>]
-    member val Message = "" with get, set
+    member this.Message
+        with get() = _message
+        and set(value) = _message <- value
 
     [<Required>]
     [<StringLength(50)>]
-    member val User = "" with get, set
+    member this.User
+        with get() = _user
+        and set(value) = _user <- value
 
     [<Required>]
-    member val StatusCode = 0 with get, set
+    member this.StatusCode
+        with get() = _statusCode
+        and set(value) = _statusCode <- value
 
     [<Required>]
-    member val TimeUtc = DateTime.UtcNow with get, set
+    member this.TimeUtc
+        with get() = _timeUtc
+        and set(value) = _timeUtc <- value
 
     [<DatabaseGenerated(DatabaseGeneratedOption.Identity)>]
-    member val Sequence = 0 with get, set
+    member this.Sequence
+        with get() = _sequence
+        and set(value) = _sequence <- value
 
-    [<Column(TypeName = "ntext")>]
     [<Required>]
-    member val AllXml = "" with get, set
-end
+    [<Column(TypeName = "ntext")>]
+    member this.AllXml
+        with get() = _allXml
+        and set(value) = _allXml <- value
