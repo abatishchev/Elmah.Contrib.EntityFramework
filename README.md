@@ -1,7 +1,7 @@
 ﻿Elmah.Contrib.EntityFramework
 ===
 
-Provides the way to integrate [Elmah](http://code.google.com/p/elmah/) with [Microsoft ADO.NET Entity Framework](http://entityframework.codeplex.com/). Written in F#.
+Provides the way to integrate [Elmah](http://code.google.com/p/elmah/) with [Microsoft ADO.NET Entity Framework](http://entityframework.codeplex.com/). Initially written in F# but then rewritten in C#.
 
 Description
 ===
