@@ -2,20 +2,25 @@
 
 namespace Elmah.Contrib.EntityFramework
 {
-    public class EntityErrorLog : SqlErrorLog
-    {
-        public EntityErrorLog(System.Collections.IDictionary config)
-            : base(config)
-        {
-        }
+	public class EntityErrorLog : SqlErrorLog
+	{
+		public EntityErrorLog(string connectionString)
+			: base(connectionString)
+		{
+		}
 
-        public override string ConnectionString
-        {
-            get
-            {
-                var builder = new EntityConnectionStringBuilder(base.ConnectionString);
-                return builder.ProviderConnectionString;
-            }
-        }
-    }
+		public EntityErrorLog(System.Collections.IDictionary config)
+			: base(config)
+		{
+		}
+
+		public override string ConnectionString
+		{
+			get
+			{
+				var builder = new EntityConnectionStringBuilder(base.ConnectionString);
+				return builder.ProviderConnectionString;
+			}
+		}
+	}
 }

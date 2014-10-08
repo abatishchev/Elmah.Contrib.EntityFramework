@@ -25,7 +25,10 @@ Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramewor
 Release notes
 ===
 
-1.1.0
+1.1.1:
+[+] Adding to EntityErrorLog ctor accepting String
+
+1.1.0:
 [~] Rewritten in C# to do not require the F# runtime, unfortunately
 
 1.0.3:
