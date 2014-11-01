@@ -13,10 +13,23 @@ Also you can query Elmah errors table using LINQ to Entities having strongly-typ
 
 Comments and contributions are very welcomed!
 
+Examples
+===
+```
+<configuration>
+	<connectionStrings>
+		<add name="ModelContainer" connectionString="metadata=res://*/;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True;&quot;" providerName="System.Data.EntityClient" />
+	</connectionStrings>
+	<elmah>
+		<errorLog type="Elmah.Contrib.EntityFramework.EntityErrorLog, Elmah.Contrib.EntityFramework" connectionStringName="ModelContainer" />
+	</elmah>
+</configuration>
+```
+
 Remarks
 ===
 
-You can use either `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both simultaneously.
+You can use either `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
 
 Downloads
 ===
@@ -24,6 +37,9 @@ Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramewor
 
 Release notes
 ===
+
+1.2.0-1.2.2:
+[+] Added the support for MySQL
 
 1.1.1:
 [+] Adding to EntityErrorLog ctor accepting String
@@ -39,19 +55,6 @@ Release notes
 
 1.0.1:
 [+] Added EntityErrorLog to re-use EF connection string
-
-Examples
-===
-```
-<configuration>
-	<connectionStrings>
-		<add name="ModelContainer" connectionString="metadata=res://*/;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True;&quot;" providerName="System.Data.EntityClient" />
-	</connectionStrings>
-	<elmah>
-		<errorLog type="Elmah.Contrib.EntityFramework.EntityErrorLog, Elmah.Contrib.EntityFramework" connectionStringName="ModelContainer" />
-	</elmah>
-</configuration>
-```
 
 Legal
 ===

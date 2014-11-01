@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>Elmah.Contrib.EntityFramework</id>
-		<summary>Integration of Elmah with Entity Framework</summary>
+		<summary>Integration of Elmah with Entity Framework. Supports SQL Server and MySQL.</summary>
 		<description>Provides the way to integrate Elmah with Microsoft ADO.NET Entity Framework</description>
 		<version>$Version$</version>
 		<authors>Alexander Batishchev</authors>
