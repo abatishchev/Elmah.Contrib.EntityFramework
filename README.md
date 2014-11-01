@@ -15,6 +15,7 @@ Comments and contributions are very welcomed!
 
 Examples
 ===
+With Model/Database First approach:
 ```
 <configuration>
 	<connectionStrings>
@@ -24,6 +25,26 @@ Examples
 		<errorLog type="Elmah.Contrib.EntityFramework.EntityErrorLog, Elmah.Contrib.EntityFramework" connectionStringName="ModelContainer" />
 	</elmah>
 </configuration>
+```
+
+With Code First approach. To query for existing errors:
+```
+var elmahContext = new ElmahContext(nameOrConnectionString);
+var errors = await elmahContext.Errors.ToArrayAsync();
+```
+
+Tou can also specify the table name to map:
+```
+var elmahContext = new ElmahContext(nameOrConnectionString, "MyElmahErrorsTable");
+```
+
+To add new error:
+```
+elmahContext.Errors.Add(
+	new ElmahError
+	{
+	});
+await elmahContext.SaveChangesAsync();
 ```
 
 Remarks
@@ -38,22 +59,32 @@ Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramewor
 Release notes
 ===
 
-1.2.0-1.2.2:
+1.3.0:
+
+[+] Adding to ElmahContext ctor accepting both connection string and table name
+
+1.2.2:
+
 [+] Added the support for MySQL
 
 1.1.1:
+
 [+] Adding to EntityErrorLog ctor accepting String
 
 1.1.0:
+
 [~] Rewritten in C# to do not require the F# runtime, unfortunately
 
 1.0.3:
+
 [+] Adding to ElmahError constructors accepting Elmah.Error or System.Exception
 
 1.0.2:
+
 [+] Added EF Code First DB context to query database using LINQ to Entities
 
 1.0.1:
+
 [+] Added EntityErrorLog to re-use EF connection string
 
 Legal
@@ -62,4 +93,3 @@ Legal
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
 Copyright © [Alexander Batishchev](http://abatishchev.ru) 2014
-
