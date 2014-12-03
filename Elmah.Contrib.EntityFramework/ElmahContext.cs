@@ -6,6 +6,11 @@ namespace Elmah.Contrib.EntityFramework
 	{
 		private readonly string _tableName;
 
+		static ElmahContext()
+		{
+			Database.SetInitializer(new NullDatabaseInitializer<ElmahContext>());
+		}
+
 		public ElmahContext(string nameOrConnectionString)
 			: this(nameOrConnectionString, "ELMAH_Error")
 		{
