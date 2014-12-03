@@ -59,6 +59,16 @@ Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramewor
 Release notes
 ===
 
+1.4.0:
+
+[~] Fixing table mapping, now it's `public DbSet<ElmahError> ElmahErrors { get; set; }`
+
+[~] Moving mapping to the separate class inheriting `EntityTypeConfiguration<T>`
+
+[~] Setting database initializer to null
+
+[+] Supporting schema name other than dbo
+
 1.3.0:
 
 [+] Adding to ElmahContext ctor accepting both connection string and table name
