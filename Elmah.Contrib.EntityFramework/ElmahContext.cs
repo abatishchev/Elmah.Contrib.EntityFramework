@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace Elmah.Contrib.EntityFramework
 {
@@ -25,6 +24,6 @@ namespace Elmah.Contrib.EntityFramework
 			base.OnModelCreating(modelBuilder);
 		}
 
-		public ICollection<ElmahError> Errors { get; set; }
+		public virtual DbSet<ElmahError> ElmahErrors { get; set; }
 	}
 }
