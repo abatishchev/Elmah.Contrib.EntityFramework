@@ -4,9 +4,9 @@ namespace Elmah.Contrib.EntityFramework
 {
 	public class ElmahErrorConfiguration : EntityTypeConfiguration<ElmahError>
 	{
-		public ElmahErrorConfiguration(string tableName)
+		public ElmahErrorConfiguration(string tableName, string schemaName)
 		{
-			ToTable(tableName);
+			ToTable(tableName, schemaName);
 		}
 	}
 }
