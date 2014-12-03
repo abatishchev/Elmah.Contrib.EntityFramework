@@ -24,9 +24,12 @@ namespace Elmah.Contrib.EntityFramework
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<ElmahError>().ToTable(_tableName);
+			modelBuilder.Configurations.Add(GetConfiguration());
+		}
 
-			base.OnModelCreating(modelBuilder);
+		protected virtual EntityTypeConfiguration<ElmahError> GetConfiguration()
+		{
+			return new ElmahErrorConfiguration(_tableName);
 		}
 
 		public virtual DbSet<ElmahError> ElmahErrors { get; set; }

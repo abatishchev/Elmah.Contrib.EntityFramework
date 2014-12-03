@@ -46,6 +46,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElmahErrorConfiguration.cs" />
     <Compile Include="MySqlEntityErrorLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
