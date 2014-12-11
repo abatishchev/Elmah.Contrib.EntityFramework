@@ -16,7 +16,7 @@ Comments and contributions are very welcomed!
 Examples
 ===
 With Model/Database First approach:
-```
+```xml
 <configuration>
 	<connectionStrings>
 		<add name="ModelContainer" connectionString="metadata=res://*/;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=localhost;Initial Catalog=Northwind;Integrated Security=True;&quot;" providerName="System.Data.EntityClient" />
@@ -28,18 +28,18 @@ With Model/Database First approach:
 ```
 
 With Code First approach. To query for existing errors:
-```
+```csharp
 var elmahContext = new ElmahContext(nameOrConnectionString);
 var errors = await elmahContext.Errors.ToArrayAsync();
 ```
 
 Tou can also specify the table name to map:
-```
+```csharp
 var elmahContext = new ElmahContext(nameOrConnectionString, "MyElmahErrorsTable");
 ```
 
 To add new error:
-```
+```csharp
 elmahContext.Errors.Add(
 	new ElmahError
 	{
