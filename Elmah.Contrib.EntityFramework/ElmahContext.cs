@@ -14,7 +14,12 @@ namespace Elmah.Contrib.EntityFramework
 		}
 
 		public ElmahContext(string nameOrConnectionString)
-			: this(nameOrConnectionString, "ELMAH_Error", "dbo")
+			: this(nameOrConnectionString, "ELMAH_Error")
+		{
+		}
+
+		public ElmahContext(string nameOrConnectionString, string tableName)
+			: this(nameOrConnectionString, tableName, "dbo")
 		{
 		}
 
