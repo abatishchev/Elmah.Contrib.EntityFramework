@@ -33,9 +33,9 @@ var elmahContext = new ElmahContext(nameOrConnectionString);
 var errors = await elmahContext.Errors.ToArrayAsync();
 ```
 
-You can also specify the table name to map:
+You can also optionally specify the table name to map:
 ```csharp
-var elmahContext = new ElmahContext(nameOrConnectionString, "MyElmahErrorsTable");
+var elmahContext = new ElmahContext(nameOrConnectionString, tableName: "MyElmahErrorsTable");
 ```
 
 To add new error:
@@ -50,7 +50,7 @@ await elmahContext.SaveChangesAsync();
 Remarks
 ===
 
-You can use either `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
+In same connection string, you can use either of: `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
 
 Downloads
 ===
