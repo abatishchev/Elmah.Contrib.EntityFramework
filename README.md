@@ -40,6 +40,11 @@ You can also optionally specify the table name to map:
 var elmahContext = new ElmahContext(nameOrConnectionString, tableName: "MyElmahErrorsTable");
 ```
 
+Or the schema name, or both:
+```csharp
+var elmahContext = new ElmahContext(nameOrConnectionString, schemaName: "audit");
+```
+
 To add new error:
 ```csharp
 elmahContext.Errors.Add(
@@ -52,7 +57,7 @@ await elmahContext.SaveChangesAsync();
 Remarks
 ===
 
-In same connection string, you can use either of: `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
+With the same connection string, you can use either `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
 
 Release notes
 ===
@@ -65,11 +70,11 @@ Release notes
 
 [~] Set database initializer to null
 
-[+] Supported schema name other than dbo
+[+] Added to ElmahContext ctor accepting schema name
 
 1.3.0:
 
-[+] Added to ElmahContext ctor accepting both connection string and table name
+[+] Added to ElmahContext ctor accepting table name
 
 1.2.2:
 
