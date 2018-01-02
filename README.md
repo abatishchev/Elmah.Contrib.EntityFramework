@@ -1,4 +1,6 @@
-﻿Elmah.Contrib.EntityFramework
+[![NuGet](https://img.shields.io/nuget/v/Elmah.Contrib.EntityFramework.svg)](https://www.nuget.org/packages/Elmah.Contrib.EntityFramework)
+
+Elmah.Contrib.EntityFramework
 ===
 
 Provides the way to integrate [Elmah](http://code.google.com/p/elmah/) with [Microsoft ADO.NET Entity Framework](http://entityframework.codeplex.com/). Initially written in F# but then rewritten in C#.
@@ -51,10 +53,6 @@ Remarks
 ===
 
 In same connection string, you can use either of: `EntityErrorLog` (requires `providerName="System.Data.EntityClient"`) or `EntityContext` (requires `providerName="System.Data.SqlClient"`) but not both.
-
-Downloads
-===
-Available on [NuGet](https://www.nuget.org/packages/Elmah.Contrib.EntityFramework)
 
 Release notes
 ===
