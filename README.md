@@ -11,7 +11,7 @@ The goal of this library is to extract the underlying provider connection string
 
 Also you can query Elmah errors table using LINQ to Entities having strongly-typed POCO entities.
 
-Comments and contributions are very welcomed!
+Comments and contributions are very welcome!
 
 Examples
 ===
@@ -33,7 +33,7 @@ var elmahContext = new ElmahContext(nameOrConnectionString);
 var errors = await elmahContext.Errors.ToArrayAsync();
 ```
 
-Tou can also specify the table name to map:
+You can also specify the table name to map:
 ```csharp
 var elmahContext = new ElmahContext(nameOrConnectionString, "MyElmahErrorsTable");
 ```
@@ -61,17 +61,17 @@ Release notes
 
 1.4.0:
 
-[~] Fixing table mapping, now it's `public DbSet<ElmahError> ElmahErrors { get; set; }`
+[~] Fixed table mapping, now it's `public DbSet<ElmahError> ElmahErrors { get; set; }`
 
-[~] Moving mapping to the separate class inheriting `EntityTypeConfiguration<T>`
+[~] Moved mapping to the separate class inheriting `EntityTypeConfiguration<T>`
 
-[~] Setting database initializer to null
+[~] Set database initializer to null
 
-[+] Supporting schema name other than dbo
+[+] Supported schema name other than dbo
 
 1.3.0:
 
-[+] Adding to ElmahContext ctor accepting both connection string and table name
+[+] Added to ElmahContext ctor accepting both connection string and table name
 
 1.2.2:
 
@@ -79,7 +79,7 @@ Release notes
 
 1.1.1:
 
-[+] Adding to EntityErrorLog ctor accepting String
+[+] Added to EntityErrorLog ctor accepting String
 
 1.1.0:
 
@@ -87,7 +87,7 @@ Release notes
 
 1.0.3:
 
-[+] Adding to ElmahError constructors accepting Elmah.Error or System.Exception
+[+] Added to ElmahError ctors accepting Elmah.Error or System.Exception respectively
 
 1.0.2:
 
@@ -102,4 +102,4 @@ Legal
 
 Licensed under the [MIT License](http://opensource.org/licenses/MIT)
 
-Copyright © [Alexander Batishchev](http://abatishchev.ru) 2014
+Copyright © [Alexander Batishchev](http://abatishchev.ru) 2014-2018
